@@ -1,17 +1,32 @@
 <script>
 
-var answer = 'pepperoni';
-console.log(answer);
-var reply = 'hot';
-console.log(reply);
-guess = prompt('What is your favorite pizza topping?');
-if (guess == answer) {
-  message = 'Oh yeah, pepperoni is the best!';
-} else if (guess == 'sausage') {
-  message ='Sausage is a close second for me';
-} else {
-  message = 'No thank you, ' + guess + ' is not my favorite.';
+// This is a game to guess Anson's favorit pizza topping.
+// We are adding a further iteration for hot or sweet sausage.
+// If
 
+
+var guess, answer = 'pepperoni', guess2, answer2 = 'hot';
+console.log(guess, answer);
+
+
+guess = prompt("Can you guess what is Anson's favorite pizza topping?");
+
+while(guess != answer) {
+  if (guess == 'sausage') {
+    guess2 = prompt('Sausage is a close second for me. Do you prefer hot or sweet sausage?');
+      console.log(guess2);
+    if (guess2 = answer2) {
+       guess = prompt('You are right! I like hot sausage better, but what is my favorite pizza?');
+    } else if(guess2 != answer2) {
+       guess = prompt('Sorry. Sweet sausage is boring; however, can you guess what my favorite pizza topping is?');
+    }
+   } else {
+     guess = prompt('No, ' + guess + ' is not my favorite. Would you like to guess again?');
+   }
+}
+
+if(guess == answer) {
+  message = 'Oh yeah, pepperoni is the best!';
 }
 
 alert(message);
