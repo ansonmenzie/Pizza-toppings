@@ -1,4 +1,23 @@
-<script>
+<!Doctype HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Pizza Toppings Game</title>
+</head>
+<body>
+  <img src="http://www.nicolapizza.com/img/pizza.png" />
+  <h1>Guess Anson's Favorite Pizza Topping</h1>
+  <p>This is a fun, simple game in which you get to guess my favorite pizza toppings.  I will let you know if you are right or wrong.  Keep trying until you get it right.  Have Fun!</p>
+  <h3>Hint: It is none of these toppings.</h3>
+  <ol>
+    <li>Anchovies</li>
+    <li>Kiwi</li>
+    <li>Tofu</li>
+    <li>Muskrat</li>
+  </ol>
+  <h3>Good Luck!</h3>
+  <a href="http://www.pagliacci.com/">Is this making you hungry?  Order some pizza here.</a>
+  <script>
 
 // This is a game to guess Anson's favorit pizza topping.
 // We are adding a further iteration for hot or sweet sausage.
@@ -24,24 +43,18 @@ var Game = function(guess, answer) {
          this.guess = prompt('No, ' + this.guess + ' is not my favorite. Would you like to guess again?');
        }
     }
-
     if(this.guess == this.answer) {
       this.message = 'Oh yeah, pepperoni is the best!';
     }
-
     alert(this.message);
-
   }
-
-
 }
 
 var game1 = new Game (prompt("Can you guess what is Anson's favorite pizza topping?"), 'pepperoni');
 
 game1.startGame();
 
+  </script>
 
-
-
-</script>
-
+</body>
+</html>
