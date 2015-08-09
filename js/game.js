@@ -1,45 +1,69 @@
 
+var guess, answer, guess2, answer2, message;
 
-// This is a game to guess Anson's favorit pizza topping.
-// We are adding a further iteration for hot or sweet sausage.
-// If
-var Game = function(guess, answer, answer2) {
+
+var Game = function(guess, answer) {
   this.guess = guess;
   this.answer = answer;
   this.answer2 = 'hot';
-  //this.guess2 = guess2; //not sure about this bc happens within actions
-  //this.answer2 = answer2;
-  //this.message = message;
-  this.startGame = function(guess2, message) {
 
-    while(this.guess != this.answer) {
+  this.startGame = function() {
+
+while (this.guess != this.answer) {
       if (this.guess == 'sausage') {
         this.guess2 = prompt('Sausage is a close second for me. Do you prefer hot or sweet sausage?');
-          console.log(this.guess2);
+          console.log(this.guess + ' is almost correct'
+            );
+          addToGuessList();
+
 
         if (this.guess2 == this.answer2) {
            this.guess = prompt('You are right! I like hot sausage better, but what is my favorite pizza?');
+           addToGuessList();
+
+
         } else if (this.guess2 != this.answer2) {
-           this.guess = prompt('Sorry. Sweet sausage is boring; however, can you guess what my favorite pizza topping is?');
+           this.guess = prompt('Nope, I don\'t care for that type of sausage; however, can you guess what my favorite pizza topping is?');
+           addToGuessList();
+
         }
 
        } else {
          this.guess = prompt('No, ' + this.guess + ' is not my favorite. Would you like to guess again?');
+         console.log(this.guess + ' is not correct');
+         addToGuessList();
+
        }
     }
     if(this.guess == this.answer) {
-      this.message = 'Oh yeah, pepperoni is the best!';
+      this.message = alert('Oh yeah, pepperoni is the best!');
+      console.log('You got it right');
+
+
     }
-    alert(this.message);
-  }
+
+
+  function addToGuessList() {
+  var guessListItem = document.createElement('li');
+  var guessNode = document.createTextNode('Wrong, try again.');
+  guessListItem.appendChild(guessNode);
+  document.getElementById('guess-list').appendChild(guessListItem);
+}
+}
 }
 var pizzaTime = document.getElementById('pizza-time');
-pizzaTime.innerHTML = this.message + '<img src="images/pizza-controler.jpg">';
+pizzaTime.innerHTML = '<img src="images/pizza-controler.jpg">';
 var game1 = new Game (prompt("Can you guess what is Anson's favorite pizza topping?"), 'pepperoni');
 
 game1.startGame();
 
 
+// function addToGuessList() {
+//   var guessListItem = document.createElement('li');
+//   var guessNode = document.createTextNode(guess);
+//   guessListItem.appendChild(guessNode);
+//   document.getElementById('guess-list').appendChild(guessListItem);
+// }
 
 
 
