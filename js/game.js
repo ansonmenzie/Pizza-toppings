@@ -15,7 +15,7 @@ var Game = function(guess, answer, answer2) {
     while(this.guess != this.answer) {
       if (this.guess == 'sausage') {
         this.guess2 = prompt('Sausage is a close second for me. Do you prefer hot or sweet sausage?');
-          console.log(guess2);
+          console.log(this.guess2);
 
         if (this.guess2 == this.answer2) {
            this.guess = prompt('You are right! I like hot sausage better, but what is my favorite pizza?');
